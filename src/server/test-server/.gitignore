@@ -340,3 +340,9 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+# wwwRoot
+wwwRoot
+
+# vscode
+.vscode

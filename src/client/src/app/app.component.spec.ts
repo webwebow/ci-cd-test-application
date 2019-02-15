@@ -1,5 +1,16 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { AppService } from './app.service';
+import { Observable } from 'rxjs';
+
+class MockAppService {
+  getValues(): Observable<string[]> {
+    return new Observable(s => {
+      s.next(['value1']);
+      s.complete();
+    });
+  }
+}
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -7,6 +18,9 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      providers: [
+        { provide: AppService, useClass: MockAppService }
+      ]
     }).compileComponents();
   }));
 
