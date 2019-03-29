@@ -19,7 +19,7 @@ namespace test_server.Tests
             var okResult = (OkObjectResult)result;
 
             okResult.Value.Should().BeEquivalentTo(new[] {
-                "value1", "value2"
+                "CI", "CD", "test"
             });
         }
     }
